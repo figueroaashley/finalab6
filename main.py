@@ -5,6 +5,12 @@ def encode_password(password):
         encoded_password += shifted_digit
     return encoded_password
 encode_password(12345555)
+def decode_password(encoded_password):
+    password = ""
+    for digit in encoded_password:
+        shifted_digit = str((int(digit) - 3) % 10)  # shift each digit down by 3 numbers
+        password += shifted_digit
+    return password
 
 if __name__ == "__main__":
     while True:
@@ -28,3 +34,5 @@ if __name__ == "__main__":
         else:
             print("Invalid option. Please try again.")
 encode_password()
+
+# add decoder
